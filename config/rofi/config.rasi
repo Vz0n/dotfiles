@@ -1,0 +1,7 @@
+configuration {
+ modi: "windowcd,drun,filebrowser,combi";
+ combi-modi: "windowcd,drun";
+ font: "SF Pro Text 11";
+ show-icons: true;
+}
+@theme "vzon.rasi"
