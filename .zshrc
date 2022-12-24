@@ -1,5 +1,3 @@
-#Don't forget of installing oh-my-zsh + zsh-syntax-highlighting + powerlevel10k
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -114,6 +112,22 @@ alias traceroute="tracepath"
 alias h8mail="h8mail -c ~/.config/h8mail.ini"
 alias htop="bpytop"
 alias bashtop="bpytop"
+alias df="duf"
+
+function hex2dec(){
+  printf "Type a hex number: "
+  read hexNum
+  echo -n "The decimal value is:"
+  echo "obase=10; ibase=16; $hexNum" | bc
+}
+
+function settarget(){
+    echo "$@" > /home/vzon/.config/polybar/scripts/target
+}
+
+function cleartarget(){
+    echo '' > /home/vzon/.config/polybar/scripts/target
+}
 
 function prepare(){
   mkdir {assets,network}
@@ -128,6 +142,23 @@ function ssh(){
 function image(){
   kitty +kitten icat $@
 }
+function ip2dec () {
+    if [ -z $@ ]; then
+      echo "Usage: ip2dec [ip.address.ipv4]"
+      return
+    fi
+    local a b c d ip=$@
+    IFS=. read -r a b c d <<< "$ip"
+    printf '%d\n' "$((a * 256 ** 3 + b * 256 ** 2 + c * 256 + d))"
+}
+function clipboard(){
+  if [ -z $1 ]; then
+    echo "Please provide an input file"
+  else
+    xclip -sel clip $1
+  fi
+}
+
 export PATH=$PATH:/home/vzon/.local/bin:/home/vzon/.local/share/gem/ruby/3.0.0/bin/
 neofetch
 
