@@ -11,7 +11,7 @@ You're free of cloning and use this config on your installation.
 Some basic information about the setup
 
 - OS: Arch Linux
-- Editor: VSCode/Neovim
+- Editor: VSCode/Neovim (w/ nvchad)
 - WM: [OpenBox](https://github.com/danakj/openbox)
 - Bar: [polybar](https://github.com/polybar/polybar)
 - Compositor: [picom](https://github.com/yshui/picom)
@@ -26,18 +26,23 @@ Some basic information about the setup
 
 Install packages:
 ```BASH
-pacman -S rofi openbox kitty thunar engrampa polybar nitrogen picom zsh ttf-nerdfonts-2048-em neovim xorg xorg-server flameshot pavucontrol 
-paru -i visual-studio-code-bin nerd-fonts-roboto-mono
+pacman -S rofi openbox kitty thunar thunar-volman thunar-archive-plugin gvfs engrampa polybar nitrogen picom zsh neovim xorg xorg-server flameshot pavucontrol obsidian libreoffice redshift brightnessctl pocl firefox vlc dunst bat exo gthumb lxappearance obs-studio discord git tmux bpytop
+
+#Use paru or another AUR helper
+paru -i visual-studio-code-bin nerd-fonts-roboto-mono 
 ```
 
-Clone this repo:
+Clone this repo: 
 
 `git clone https://github.com/Vz0n/dotfiles`
 
 Copy config and theme files:
 
 ```BASH
-cp -r .config ~/.config
+cp -r config ~/.config
 cp .zshrc ~/.zshrc
-cp -r .themes ~/.themes
+cp -r themes ~/.themes
+
+#Do this after installing nvchad
+cp neovim/lspconfig.lua ~/.config/nvim/lua/plugins/configs/lspconfig.lua 
 ```

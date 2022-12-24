@@ -1,7 +1,9 @@
 configuration {
  modi: "windowcd,drun,filebrowser,combi";
  combi-modi: "windowcd,drun";
- font: "SF Pro Text 11";
+ font: "Fira Code Nerd Font 12";
  show-icons: true;
+ display-drun: " ";
+ display-windowcd: " ";
 }
 @theme "vzon.rasi"
