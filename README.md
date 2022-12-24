@@ -21,6 +21,7 @@ Some basic information about the setup
 - Desktop: nitrogen
 - Screenshots: flameshot
 - Launcher: [rofi](https://github.com/davatorium/rofi)
+- GTK Themes: Sweet Dark (Windows), Bonny Dark (Icons), Material Dark (Cursor)
 
 ## Installation
 
