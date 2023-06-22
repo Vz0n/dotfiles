@@ -12,7 +12,7 @@ def handle_ctrl(a, b):
 signal(SIGINT, handle_ctrl)
 
 domain = str(input("Enter domain: "))
-qtype = str(input("Enter query type: "))
+qtype = str(input("Enter query type: ")).lower()
 page = int(input("Enter page: "))
 
 endpoint = f"https://api.securitytrails.com/v1/history/{domain}/dns/{qtype}?page={page}"

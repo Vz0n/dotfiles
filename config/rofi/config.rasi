@@ -1,6 +1,6 @@
 configuration {
- modi: "windowcd,drun,filebrowser,combi";
- combi-modi: "windowcd,drun";
+ modi: "window,drun,filebrowser,combi";
+ combi-modi: "window,drun";
  font: "Fira Code Nerd Font 12";
  show-icons: true;
  display-drun: " ";

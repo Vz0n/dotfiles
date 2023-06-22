@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #Some alias here
-alias ls="exa --icons"
+alias ls="lsd"
 alias ip="ip --color=auto"
 alias vi="nvim"
 alias vim="nvim"
@@ -113,6 +113,7 @@ alias h8mail="h8mail -c ~/.config/h8mail.ini"
 alias htop="bpytop"
 alias bashtop="bpytop"
 alias df="duf"
+alias ps="procs"
 
 function hex2dec(){
   printf "Type a hex number: "
@@ -122,11 +123,11 @@ function hex2dec(){
 }
 
 function settarget(){
-    echo "$@" > /home/vzon/.config/polybar/scripts/target
+    echo "$@" > /home/vzon/.config/waybar/scripts/target
 }
 
 function cleartarget(){
-    echo '' > /home/vzon/.config/polybar/scripts/target
+    echo '' > /home/vzon/.config/waybar/scripts/target
 }
 
 function prepare(){
@@ -134,7 +135,7 @@ function prepare(){
   touch notes.txt
 }
 function cat(){
-  bat $@
+  bat --style=plain --paging=never $@
 }
 function ssh(){
   kitty +kitten ssh $@
@@ -155,13 +156,25 @@ function clipboard(){
   if [ -z $1 ]; then
     echo "Please provide an input file"
   else
-    xclip -sel clip $1
+    wl-copy -n < $1
+  fi
+}
+function wallpaper(){
+  if [ "$1" = "restart" ]; then
+    echo "Restarting wallpaper..."
+    pkill -x hyprpaper
+    hyprpaper >& /dev/null &
+    echo "Done."
+  else
+    echo "Usage: wallpaper [restart]"
   fi
 }
 
 export PATH=$PATH:/home/vzon/.local/bin:/home/vzon/.local/share/gem/ruby/3.0.0/bin/
 neofetch
 
+export EDITOR="nvim"
+export VISUAL=$EDITOR
 PATH="/home/vzon/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/vzon/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/vzon/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
