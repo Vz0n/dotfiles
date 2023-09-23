@@ -4,44 +4,62 @@
 
 This is my Arch Linux setup/rice.
 
-You're free of cloning and use this config on your installation.
+It's based on some rices that i saw among the Linux ricing community, but the inspiration came mainly from [s4vitar's bspwm](https://github.com/yorkox0/autoBspwm) and [rxyhn's dotfiles](https://github.com/rxyhn/yuki). The main purpose for this rice was just hacking stuff but with the time it has became my main OS for programming and hacking at same time.
 
 ## Information
-
-Some basic information about the setup
 
 - OS: Arch Linux
 - WM: [HyprLand](https://github.com/hyprwm/Hyprland)
 - Bar: [Waybar](https://github.com/Alexays/Waybar)
+- Locker: [swaylock](https://github.com/swaywm/swaylock)
 - Terminal: [kitty](https://github.com/kovidgoyal/kitty)
-- Shell: zsh
+- Shell: zsh (w/ powerlevel10k, oh-my-zsh)
 - Note taker: Obsidian
 - Screenshots: flameshot
 - Launcher: [rofi](https://github.com/davatorium/rofi)
 - GTK Themes: Sweet Dark (Windows), Bonny Dark (Icons), Material Dark (Cursor)
+- Font: Fira Code (Nerd)
 
 ## Installation
 
-Install packages:
-```BASH
-pacman -S kitty thunar thunar-volman thunar-archive-plugin gvfs engrampa hyprland hyprpaper zsh pavucontrol obsidian gammastep brightnessctl pocl firefox dunst bat lsd gthumb git xdg-desktop-portal-hyprland xdg-desktop-portal nwg-look bpytop duf obsidian
+### Environment 
 
-# Use paru or another AUR helper
-paru -i waybar-hyprland nerd-fonts-roboto-mono flameshot-git rofi-lbonn-wayland
+As always, install packages:
+
+```BASH
+# Basic software
+pacman -S kitty thunar thunar-volman thunar-archive-plugin gvfs engrampa hyprland swww zsh pavucontrol obsidian gammastep brightnessctl pocl dunst bat lsd gthumb git xdg-desktop-portal-hyprland xdg-desktop-portal nwg-look bpytop duf obsidian opendoas
+
+# Some alternative software for Wayland 
+paru -i waybar-hyprland flameshot-git rofi-lbonn-wayland
 ```
 
-Clone this repo: 
+Download the GTK themes and use `nwg-look` to apply it, because `lxappearance` has no effect on wayland compositors. Don't worry as it's easy to set it like lxa as you can see below
+
+![nwg-look](/img/nwg-look.png)
+
+Clone this repo and save it wherever you like: 
 
 `git clone https://github.com/Vz0n/dotfiles`
 
-Copy config files:
+Now, copy the config files to your local directories:
 
 ```BASH
 cp -r config ~/.config
+# OPTIONAL: Custom scripts for OSINT
 cp -r local ~/.local
-cp .zshrc ~/.zshrc
 ```
 
-Now tweak the config how you like and enjoy your new system!
+Then just reload Hyprland and you should get the environment working.
 
-*PS: Read documentations before you start to edit*
+### Terminal
+
+Install [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) and [powerlevel10k](https://github.com/romkatv/powerlevel10k), now just append in your `.zshrc` the contents from this repo's file.
+
+### Extra
+
+As you might have seen, this has some scripts and a waybar widget for OSINT purposes; those works using the SecurityTrails API so you will need an API key if you want them. Same applies for h8mail.
+
+For the waybar widget just read the code and `.zshrc`.
+
+*Suggestion: read documentations of the software used here before starting to edit stuff*
