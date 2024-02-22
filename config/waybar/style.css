@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: NotoSansMono Nerd Font;
+    font-family: Hack Nerd Font;
     font-size: 13px;
 }
 
@@ -64,6 +64,7 @@ button:hover {
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
+    border-radius: 2px;
 }
 
 #mode {
@@ -121,10 +122,6 @@ button:hover {
     to {
         background-color: #ffffff;
     }
-}
-
-#battery.critical:not(.charging) {
-    color: #8014c2;
 }
 
 label:focus {

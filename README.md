@@ -14,11 +14,11 @@ It's based on some rices that i saw among the Linux ricing community, but the in
 - Locker: [swaylock](https://github.com/swaywm/swaylock)
 - Terminal: [kitty](https://github.com/kovidgoyal/kitty)
 - Shell: zsh (w/ powerlevel10k, oh-my-zsh)
-- Note taker: Obsidian
+- Notes: Obsidian
 - Screenshots: flameshot
 - Launcher: [rofi](https://github.com/davatorium/rofi)
 - GTK Themes: Sweet Dark (Windows), Bonny Dark (Icons), Material Dark (Cursor)
-- Font: Fira Code (Nerd)
+- Fonts: Fira Code, Hack (Nerd)
 
 ## Installation
 
@@ -28,10 +28,10 @@ As always, install packages:
 
 ```BASH
 # Basic software
-pacman -S kitty thunar thunar-volman thunar-archive-plugin gvfs engrampa hyprland swww zsh pavucontrol obsidian gammastep brightnessctl pocl dunst bat lsd gthumb git xdg-desktop-portal-hyprland xdg-desktop-portal nwg-look bpytop duf obsidian opendoas
+pacman -S kitty thunar thunar-volman thunar-archive-plugin gvfs engrampa hyprland zsh pavucontrol obsidian gammastep brightnessctl pocl dunst bat lsd gthumb git xdg-desktop-portal-hyprland xdg-desktop-portal nwg-look bpytop duf obsidian opendoas
 
-# Some alternative software for Wayland 
-paru -i waybar-hyprland flameshot-git rofi-lbonn-wayland
+# Software from AUR (Using yay)
+yay -S waybar-hyprland flameshot-git rofi-lbonn-wayland swww
 ```
 
 Download the GTK themes and use `nwg-look` to apply it, because `lxappearance` has no effect on wayland compositors. Don't worry as it's easy to set it like lxa as you can see below

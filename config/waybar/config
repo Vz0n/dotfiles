@@ -1,20 +1,20 @@
 {
     "layer": "top",
-    // "position": "left", // Waybar position (top|bottom|left|right)
+    //"position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
     "width": 1356, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     "margin-top": 2,
     // Choose the order of the modules
     "modules-left": ["clock", "custom/target"],
-    "modules-center": ["wlr/workspaces"],
+    "modules-center": ["hyprland/workspaces"],
     "modules-right": ["user", "pulseaudio", "network", "battery", "tray"],
     //Modules configuration
     "user": {
       "format": "",
       "icon": true
     },
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
          "disable-scroll": true,
          "all-outputs": true,
          "format": "{icon}",
@@ -23,10 +23,10 @@
              "focused": "",
              "1": "",
              "2": "",
-             "3": "",
+             "3": "",
              "4": "",
-             "5": "",
-             "6": "",
+             "5": "",
+             "6": "",
          }
     },
     "keyboard-state": {
@@ -109,12 +109,12 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
         "format": "{icon}",
-        "format-charging": "",
+        "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -122,16 +122,13 @@
         "format-icons": ["", "", "", "", ""],
         "tooltip-format": "{capacity}%\n{timeTo}"
     },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{ipaddr} ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰆧",
+        "tooltip-format": "{ifname} via {gwaddr}",
         "tooltip-format-wifi": "Connected to {essid}. ({signaldBm} dBm)",
-        "format-linked": "{ifname} (No IP) ",
+        "format-linked": "{ifname} (No IP) 󰅛",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
@@ -155,7 +152,7 @@
         "on-click": "pavucontrol"
     },
     "custom/target": {
-        "format": "  {}",
+        "format": "󰍹  {}",
         "max-length": 40,
         "interval": 3,
         "tooltip": true,

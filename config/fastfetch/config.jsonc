@@ -10,7 +10,7 @@
         "source": "arch_small"
     },
     "display": {
-        "percentType": 9, // colored percent number
+        //"percentType": 9, // colored percent number
         "separator": " "
     },
     "modules": [
@@ -21,7 +21,7 @@
         "break",
         {
           "type": "host",
-          "key": "  "
+          "key": "󰢩  "
         },
         {
           "type": "kernel",
@@ -45,7 +45,7 @@
         },
         {
           "type": "cpu",
-          "key": "ﲾ  "
+          "key": "  "
         },
         "break",
         {
