@@ -6,9 +6,9 @@
 
 * {
     bg0:    #212121F2;
-    bg1:    #2A2A2A;
+    bg1:    #000000;
     bg2:    #3D3D3D80;
-    bg3:    #616161F2;
+    bg3:    #00000000;
     fg0:    AntiqueWhite;
     fg1:    Blue;
     fg2:    #969696;

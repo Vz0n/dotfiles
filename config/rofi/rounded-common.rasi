@@ -1,7 +1,5 @@
 /*******************************************************************************
- * ROUNDED THEME FOR ROFI 
- * User                 : LR-Tech               
- * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
+ * Taken from        : https://github.com/lr-tech/rofi-themes-collection
  *******************************************************************************/
 
 * {
@@ -14,11 +12,11 @@
 }
 
 window {
-    location:       east;
+    location:       center;
     width:          480;
     border-radius:  4px;
     
-    background-color: #121212;
+    background-color: rgba(0,0,0,0.9);
     transparency: "real";
 }
 
@@ -40,8 +38,8 @@ inputbar {
 
 textbox-custom {
   expand: false;
-  content: "Vz0n's box";
-  width: 100px;
+  content: "...";
+  width: 30px;
   text-color: Aqua;
 }
 
@@ -50,7 +48,7 @@ prompt {
 }
 
 entry {
-    placeholder:        "Enter smth";
+    placeholder:        "Enter window/app name";
     placeholder-color:  @fg3;
 }
 
@@ -68,10 +66,11 @@ textbox {
 listview {
     background-color:   transparent;
 
-    margin:     12px 0 0;
+    margin:     3px 0 0;
     lines:      8;
     columns:    1;
-
+    
+    dynamic: false;
     fixed-height: false;
 }
 
