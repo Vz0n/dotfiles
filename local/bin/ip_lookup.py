@@ -14,26 +14,36 @@ ip = input("Enter IP Address: ")
 
 if ip != "":
 
-    request = requests.get("https://ip-geolocation.whoisxmlapi.com/api/v1?apiKey=APIKEYHERE&ipAddress=" + ip)
-
-    if(request.status_code != 200):
-        print(Fore.RED + "Something strange happened...")
+    request = requests.get(f"https://ipinfo.io/widget/demo/{ip}")
+    response = request.json()
+    err = response.get('error')
+    
+    if err != None:
+        print(Fore.RED + "An error ocurred: " + err)
         time.sleep(5)
         exit()
 
-    response = request.json()
-    country = response["location"]["country"]
-    city = response["location"]["city"]
-    isp = response["isp"]
-    asn = response["as"]["asn"]
-    asnname = response["as"]["name"]
-    routes = response["as"]["route"]
-    conntype = response["as"]["type"]
-    asndomain = response["as"]["domain"]
+    # This shit is a fucking mess.. twt
+    # But well, won't maintain it too much.
+    response = request.json()["data"]
+    country = response["country"]
+    city = response["city"]
+    region = response["region"]
+    hostname = response["hostname"]
+    loc = response["loc"]
+    org = response["org"]
+    asn = response["asn"]["asn"]
+    asnname = response["asn"]["name"]
+    routes = response["asn"]["route"]
+    conntype = response["asn"]["type"]
+    asndomain = response["asn"]["domain"]
     print(Fore.CYAN + "[*] IP: " + ip)
+    print(Fore.CYAN + "[*] Hostname: " + hostname)
     print(Fore.CYAN + "[*] Country: " + country)
     print(Fore.CYAN + "[*] City: " + city)
-    print(Fore.CYAN + "[*] ISP: " + isp)
+    print(Fore.CYAN + "[*] Region: " + region)
+    print(Fore.CYAN + "[*] Location (Lat, Long): " + loc)
+    print(Fore.CYAN + "[*] Organization: " + org)
     print(Fore.CYAN + "[*] ASN: " + str(asn))
     print(Fore.CYAN + "[*] ASN's name: " + asnname)
     print(Fore.CYAN + "[*] Routes: " + routes)

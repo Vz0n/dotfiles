@@ -2,6 +2,7 @@ from colorama import Fore, Back, init
 from signal import signal, SIGINT
 from time import sleep
 import requests
+import os
 from urllib3.exceptions import NewConnectionError
 
 def handle_ctrl(a, b):
@@ -15,7 +16,7 @@ domain = str(input("Enter domain: "))
 endpoint = f"https://api.securitytrails.com/v1/domain/{domain}/subdomains?children_only=true&include_inactive=false"
 headers = {
     "Accept": "application/json",
-    "APIKEY": "you know"
+    "APIKEY": os.getenv('STRAILS_API_KEY')
 }
 
 try:

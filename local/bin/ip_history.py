@@ -1,6 +1,7 @@
 from colorama import Fore, Back, init
 from signal import signal, SIGINT
 from time import sleep
+import os
 import requests
 from urllib3.exceptions import NewConnectionError
 
@@ -18,7 +19,7 @@ page = int(input("Enter page: "))
 endpoint = f"https://api.securitytrails.com/v1/history/{domain}/dns/{qtype}?page={page}"
 headers = {
     "Accept": "application/json",
-    "APIKEY": "you know"
+    "APIKEY": os.getenv('STRAILS_API_KEY')
 }
 
 try:
