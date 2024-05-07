@@ -13,13 +13,13 @@ read opt
 
 case $opt in
    1)
-     python3 /usr/bin/ip_lookup.py
+     python3 ./ip_lookup.py
      ;;
    2)
-     python3 /usr/bin/ip_history.py
+     python3 ./ip_history.py
      ;;
    3)
-     python3 /usr/bin/subdomains.py
+     python3 ./subdomains.py
      ;;
    *)
      echo "Please select a valid option."

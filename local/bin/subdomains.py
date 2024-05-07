@@ -30,7 +30,6 @@ try:
   arr = result["subdomains"]
   for i in arr:
     print(Fore.GREEN + f"- {i}\r")
-  sleep(10)
 except NewConnectionError:
   print("You don't have internet connection.")
   exit()

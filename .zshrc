@@ -175,6 +175,7 @@ function run_vm(){
     qemu-system-x86_64 -enable-kvm -vga vmware -cpu host -display gtk,grab-on-hover=on,show-menubar=off -usb -device usb-tablet -device usb-kbd $@
 }
 
+# Load our API tokens for scripts
 source ~/.api_tokens
 
 export PATH=$PATH:/home/vzon/.local/bin:/home/vzon/.local/share/gem/ruby/3.0.0/bin/

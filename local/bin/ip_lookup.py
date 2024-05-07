@@ -1,5 +1,5 @@
 import requests
-from colorama import Fore, Back, init, deinit
+from colorama import Fore, init, deinit
 import time
 import signal
 
@@ -14,6 +14,7 @@ ip = input("Enter IP Address: ")
 
 if ip != "":
 
+    # Yes, i'm insane
     request = requests.get(f"https://ipinfo.io/widget/demo/{ip}")
     response = request.json()
     err = response.get('error')
@@ -23,8 +24,8 @@ if ip != "":
         time.sleep(5)
         exit()
 
-    # This shit is a fucking mess.. twt
-    # But well, won't maintain it too much.
+    # Obviously this is a mess, but it's a simple (and bad) script
+    # Replace with something better
     response = request.json()["data"]
     country = response["country"]
     city = response["city"]
@@ -49,8 +50,6 @@ if ip != "":
     print(Fore.CYAN + "[*] Routes: " + routes)
     print(Fore.CYAN + "[*] Domain: " + asndomain)
     print(Fore.CYAN + "[*] Connection type: " + conntype)
-    print(Fore.GREEN + "Closing in 20 seconds...")
-    time.sleep(20)
     deinit() 
 
 else:

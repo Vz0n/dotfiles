@@ -42,8 +42,6 @@ try:
     for ip in item["values"]:
         print(" " + ip["ip"])
     print("\n")
-#   print(Fore.LIGHTGREEN_EX + f"Output wrote on {domain}.result")
-  sleep(10)
 except NewConnectionError:
   print("You don't have internet connection.")
   exit()
