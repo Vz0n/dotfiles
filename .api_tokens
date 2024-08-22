@@ -1,1 +1,2 @@
+# If you want to add another API key to the environment, put it in here.
 export STRAILS_API_KEY="KEY_HERE"

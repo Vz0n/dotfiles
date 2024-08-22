@@ -6,8 +6,8 @@ if [ $USER != "root" ]; then
 fi
 
 
-# Install packages
-pacman -S kitty thunar thunar-volman thunar-archive-plugin gvfs engrampa hyprland hyprlock hypridle grim zsh pavucontrol obsidian gammastep brightnessctl pocl dunst bat lsd gthumb git xdg-desktop-portal-hyprland xdg-desktop-portal nwg-look bpytop duf obsidian opendoas
+# Install main packages
+pacman -S kitty rofi-wayland thunar thunar-volman thunar-archive-plugin gvfs engrampa swww hyprland waybar hyprlock hypridle grim zsh pavucontrol obsidian gammastep brightnessctl pocl dunst bat lsd gthumb git xdg-desktop-portal-hyprland xdg-desktop-portal nwg-look bpytop duf obsidian opendoas
 
 helper=$(which yay || which paru)
 
@@ -21,14 +21,14 @@ if [ -z $helper ]; then
    rm -rf .tmp/
 fi
 
-$helper -S waybar-hyprland flameshot-git rofi-lbonn-wayland swww eww
+$helper -S flameshot-git eww
 
 # Copy directories
 cp -r config ~/.config
 printf "Want to use OSINT scripts? (yes/no): "
 read ans
 
-if [ $ans = "yes" ]; then
+if [[ $ans =~ "^y" ]]; then
    cp -r local ~/.local
 fi
 
