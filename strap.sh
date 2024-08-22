@@ -7,7 +7,7 @@ fi
 
 
 # Install main packages
-pacman -S kitty rofi-wayland thunar thunar-volman thunar-archive-plugin gvfs engrampa swww hyprland waybar hyprlock hypridle grim zsh pavucontrol obsidian gammastep brightnessctl pocl dunst bat lsd gthumb git xdg-desktop-portal-hyprland xdg-desktop-portal nwg-look bpytop duf obsidian opendoas
+pacman -S kitty fastfetch rofi-wayland gvfs swww hyprland waybar hyprlock hypridle grim zsh pavucontrol obsidian gammastep brightnessctl dunst bat lsd git xdg-desktop-portal-hyprland xdg-desktop-portal nwg-look bpytop duf obsidian
 
 helper=$(which yay || which paru)
 
