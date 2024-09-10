@@ -2,7 +2,7 @@
 
 ![Preview](img/preview.png)
 
-This is my Arch Linux config/setup.
+This is my Arch Linux installation's dotfiles.
 
 It's based on some rices that i saw among the Linux ricing community, but the inspiration came mainly from [s4vitar's bspwm](https://github.com/yorkox0/autoBspwm) and [rxyhn's dotfiles](https://github.com/rxyhn/yuki). The main purpose for this rice was just hacking and playing around, and with the time it has became my main OS for my stuff.
 
@@ -12,12 +12,12 @@ It's based on some rices that i saw among the Linux ricing community, but the in
 - WM: [HyprLand](https://github.com/hyprwm/Hyprland)
 - Bar: [Waybar](https://github.com/Alexays/Waybar)
 - Locker: Hyprland ones (hyprlock/hypridle)
-- Terminal: [kitty](https://github.com/kovidgoyal/kitty) and zsh as shell.
+- Terminal: [kitty](https://github.com/kovidgoyal/kitty) and zsh as shell (with oh-my-zsh).
 - Notes: Obsidian
 - Screenshots: flameshot
 - Launcher: [rofi](https://github.com/davatorium/rofi)
 - Fonts: Fira Code, Hack (Nerd)
-- Extra: eww
+- Widgets: eww
 
 ## Installation
 
