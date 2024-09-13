@@ -1,13 +1,27 @@
 #!/bin/bash
 
-if [ $USER != "root" ]; then
-  echo "Run this script as root."
+function terminate(){
+   echo "Exiting..."
+   exit 1
+}
+
+trap terminate SIGINT
+
+# Silly way to check if it's root tho
+if [[ $HOME == "/root" ]]; then
+  echo "Run this script as a normal user."
   exit 1
 fi
 
+stat /usr/bin/sudo 2>/dev/null
+
+if [ $? -eq 1 ]; then
+   echo "Install and configure sudo or one alternative to use the script."
+   exit 1
+fi
 
 # Install main packages
-pacman -S kitty fastfetch rofi-wayland gvfs swww hyprland waybar hyprlock hypridle grim zsh pavucontrol obsidian gammastep brightnessctl dunst bat lsd git xdg-desktop-portal-hyprland xdg-desktop-portal nwg-look bpytop duf obsidian
+sudo pacman -S which git kitty fastfetch rofi-wayland gvfs swww hyprland waybar hyprlock hypridle grim zsh pavucontrol obsidian gammastep brightnessctl dunst bat lsd git xdg-desktop-portal-hyprland xdg-desktop-portal nwg-look bpytop duf obsidian
 
 helper=$(which yay || which paru)
 
@@ -16,6 +30,11 @@ if [ -z $helper ]; then
    git clone https://aur.archlinux.org/yay-bin.git .tmp/
    cd .tmp/
    makepkg -si
+   if [ $? -eq 1 ];
+     echo "Something strange happened while building the AUR helper! check console"
+     exit 1
+   fi
+
    # Just go back in the directory tree
    cd ..
    rm -rf .tmp/
@@ -41,6 +60,7 @@ echo "This config doesn't come with a GTK and QT theme, so you will need to inst
 echo "To see the Hyprland, just go to your Desktop Manager login screen and"
 echo "select 'Hyprland' as session." 
 
-
+# Reset signal handler to it's normal value
+trap SIGINT
 
 
