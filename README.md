@@ -23,6 +23,8 @@ It's based on some rices that i saw among the Linux ricing community, but the in
 
 Clone this repo and run the script `strap.sh`. It will install all the stuff needed for the environment to work and setup config files.
 
+**Note:** There are still some things in config files that have my home directory hardcoded, I need to change it so, take note if you're installing this.
+
 ### My themes and terminal
 
 I use powerlevel10k as default terminal theme, Sweet Dark + Bonny Dark Icons for GTK and the Material Dark Cursor, just in case that you want to know (surely you actually don't want but uwu)
