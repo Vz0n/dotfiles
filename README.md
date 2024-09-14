@@ -23,8 +23,6 @@ It's based on some rices that i saw among the Linux ricing community, but the in
 
 Clone this repo and run the script `strap.sh`. It will install all the stuff needed for the environment to work and setup config files.
 
-Note that you will need to install and config the zsh/GTK themes separately, as this just provides the initial config for Hyprland. 
-
 ### My themes and terminal
 
 I use powerlevel10k as default terminal theme, Sweet Dark + Bonny Dark Icons for GTK and the Material Dark Cursor, just in case that you want to know (surely you actually don't want but uwu)
