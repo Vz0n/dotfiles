@@ -1,4 +1,4 @@
-#Some alias here
+#Some aliases here
 alias ls="lsd"
 alias ip="ip --color=auto"
 alias {vi,vim}="nvim"
