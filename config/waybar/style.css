@@ -88,7 +88,15 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #mpd {
-    padding: 0 10px;
+    padding: 0 8px;
+}
+
+#battery.warning{
+  background-color: red;
+} 
+
+#battery.critical{
+  background-color: darkred;
 }
 
 #window,
@@ -112,6 +120,7 @@ button:hover {
 
 #battery {
     color: #8014c2;
+    border-radius: 4px;
 }
 
 @keyframes blink {

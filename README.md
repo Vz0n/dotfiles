@@ -31,7 +31,7 @@ I use powerlevel10k as default terminal theme, Sweet Dark + Bonny Dark Icons for
 
 ### Extra
 
-As you might have seen, this has some scripts and a waybar widget for hacking/research purposes; those works using the SecurityTrails API so you will need to put an API key in the `~/.api_tokens` file. 
+As you might have seen, this has some scripts and a waybar widget for hacking/research purposes, the scripts works using the SecurityTrails API so you will need to put an API key in the `~/.api_tokens` file. 
 
 For the waybar widget just read the code and `.zshrc`.
 

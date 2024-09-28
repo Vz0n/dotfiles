@@ -7,10 +7,16 @@ alias {htop,bashtop}="bpytop"
 alias df="duf"
 alias ps="procs"
 
+# Sometimes I modify my waybar so
+function restart_waybar(){
+  pkill waybar
+  nohup waybar > /dev/null &
+}
+
 function hex2dec(){
   printf "Type a hex number: "
   read hexNum
-  echo -n "The decimal value is:"
+  echo -n "The decimal value is: "
   echo "obase=10; ibase=16; $hexNum" | bc
 }
 

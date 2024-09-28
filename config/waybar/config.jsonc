@@ -109,17 +109,17 @@
     },
     "battery": {
         "states": {
-            "good": 90,
-            "warning": 30,
-            "critical": 15
+            "good": 95,
+            "warning": 20,
+            "critical": 10
         },
-        "format": "{icon}",
+        "format": "{icon} ",
         "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        "format-good": "󱟢",
+        //"format-good": "",
         "format-full": "",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": ["", "", "", ""],
         "tooltip-format": "{capacity}%\n{timeTo}"
     },
     "network": {
@@ -136,9 +136,9 @@
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon}  {format_source}",
-        "format-bluetooth-muted": " {icon}  {format_source}",
+        "format-bluetooth-muted": " {icon}  {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": " {volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -158,7 +158,7 @@
         "tooltip": true,
         "on-click": "/home/vzon/.config/waybar/scripts/copy.sh",
         "on-click-right": "/home/vzon/.config/waybar/scripts/copy.sh",
-        "exec": "/home/vzon/.config/waybar/scripts/target_status.sh" // Script in resources folder
+        "exec": "/home/vzon/.config/waybar/scripts/target_status.sh"
     }
 }
 
