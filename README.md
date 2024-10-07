@@ -1,4 +1,4 @@
-# Vz0n's box
+## Vz0n's box
 
 ![Preview](img/preview.png)
 
@@ -6,7 +6,7 @@ This is my Arch Linux installation's dotfiles.
 
 It's based on some rices that i saw among the Linux ricing community, but the inspiration came mainly from [s4vitar's bspwm](https://github.com/yorkox0/autoBspwm) and [rxyhn's dotfiles](https://github.com/rxyhn/yuki).
 
-## Information
+### Information
 
 - OS: Arch Linux
 - WM: [HyprLand](https://github.com/hyprwm/Hyprland)
@@ -19,7 +19,7 @@ It's based on some rices that i saw among the Linux ricing community, but the in
 - Fonts: Fira Code, Hack (Nerd)
 - Widgets: eww
 
-## Installation
+### Installation
 
 Clone this repo and run the script `strap.sh`. It will install all the stuff needed for the environment to work and setup config files.
 
