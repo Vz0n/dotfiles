@@ -15,9 +15,9 @@ It's based on some rices that i saw among the Linux ricing community, but the in
 - Terminal: [kitty](https://github.com/kovidgoyal/kitty) and zsh as shell (with oh-my-zsh).
 - Notes: Obsidian
 - Screenshots: flameshot
-- Launcher: [rofi](https://github.com/davatorium/rofi)
+- Launcher: [fuzzel](https://codeberg.org/dnkl/fuzzel/)
 - Fonts: Fira Code, Hack (Nerd)
-- Widgets: eww
+- Widgets: [eww](https://github.com/elkowar/eww)
 
 ### Installation
 
