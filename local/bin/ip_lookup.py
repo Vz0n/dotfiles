@@ -1,3 +1,6 @@
+# Simple script to get IP address info.
+# code something better than this please.
+# 
 import requests
 from colorama import Fore, init, deinit
 import time
@@ -14,7 +17,6 @@ ip = input("Enter IP Address: ")
 
 if ip != "":
 
-    # Yes, i'm insane
     request = requests.get(f"https://ipinfo.io/widget/demo/{ip}")
     response = request.json()
     err = response.get('error')
@@ -24,13 +26,14 @@ if ip != "":
         time.sleep(5)
         exit()
 
-    # Obviously this is a mess, but it's a simple (and bad) script
-    # Replace with something better
     response = request.json()["data"]
     country = response["country"]
     city = response["city"]
     region = response["region"]
-    hostname = response["hostname"]
+    if response.get("hostname") == None:
+        hostname = "No hostname"
+    else:
+        hostname = response["hostname"]
     loc = response["loc"]
     org = response["org"]
     asn = response["asn"]["asn"]
@@ -50,6 +53,8 @@ if ip != "":
     print(Fore.CYAN + "[*] Routes: " + routes)
     print(Fore.CYAN + "[*] Domain: " + asndomain)
     print(Fore.CYAN + "[*] Connection type: " + conntype)
+    print(Fore.GREEN + "Closing in 20 seconds...")
+    time.sleep(20)
     deinit() 
 
 else:
