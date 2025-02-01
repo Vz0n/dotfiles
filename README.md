@@ -11,7 +11,7 @@ It's based on some rices that i saw among the Linux ricing community, but the in
 - OS: Arch Linux
 - WM: [HyprLand](https://github.com/hyprwm/Hyprland)
 - Bar: [Waybar](https://github.com/Alexays/Waybar)
-- Locker: Hyprland ones (hyprlock/hypridle)
+- Locker: hyprlock/hypridle
 - Terminal: [kitty](https://github.com/kovidgoyal/kitty) and zsh as shell (with oh-my-zsh).
 - Notes: Obsidian
 - Screenshots: flameshot
