@@ -6,7 +6,7 @@ from colorama import Fore, init, deinit
 import time
 import signal
 
-def interrupt(k,v):
+def interrupt(s,f):
   print("Exiting...")
   exit()
 
@@ -17,7 +17,7 @@ ip = input("Enter IP Address: ")
 
 if ip != "":
 
-    request = requests.get(f"https://ipinfo.io/widget/demo/{ip}")
+    request = requests.get(f"https://ipinfo.io/{ip}")
     response = request.json()
     err = response.get('error')
     
@@ -26,7 +26,7 @@ if ip != "":
         time.sleep(5)
         exit()
 
-    response = request.json()["data"]
+    response = request.json()
     country = response["country"]
     city = response["city"]
     region = response["region"]
@@ -36,11 +36,7 @@ if ip != "":
         hostname = response["hostname"]
     loc = response["loc"]
     org = response["org"]
-    asn = response["asn"]["asn"]
-    asnname = response["asn"]["name"]
-    routes = response["asn"]["route"]
-    conntype = response["asn"]["type"]
-    asndomain = response["asn"]["domain"]
+    timezone = response["timezone"]
     print(Fore.CYAN + "[*] IP: " + ip)
     print(Fore.CYAN + "[*] Hostname: " + hostname)
     print(Fore.CYAN + "[*] Country: " + country)
@@ -48,13 +44,8 @@ if ip != "":
     print(Fore.CYAN + "[*] Region: " + region)
     print(Fore.CYAN + "[*] Location (Lat, Long): " + loc)
     print(Fore.CYAN + "[*] Organization: " + org)
-    print(Fore.CYAN + "[*] ASN: " + str(asn))
-    print(Fore.CYAN + "[*] ASN's name: " + asnname)
-    print(Fore.CYAN + "[*] Routes: " + routes)
-    print(Fore.CYAN + "[*] Domain: " + asndomain)
-    print(Fore.CYAN + "[*] Connection type: " + conntype)
-    print(Fore.GREEN + "Closing in 20 seconds...")
-    time.sleep(20)
+    print(Fore.CYAN + "[*] Timezone: " + timezone)
+    print(Fore.GREEN + "Successfully fetched information.")
     deinit() 
 
 else:
