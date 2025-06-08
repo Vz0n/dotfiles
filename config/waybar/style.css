@@ -42,6 +42,10 @@ button {
     border-radius: 0;
 }
 
+.modules-right {
+    color: #8014c2;
+}
+
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
@@ -91,8 +95,13 @@ button:hover {
     padding: 0 8px;
 }
 
+#battery {
+  border-radius: 8px;
+}
+
 #battery.warning{
   background-color: red;
+  color: #8014c2; /* For some reason, this color doesn't get applied even with the .modules-right ruleset */
 } 
 
 #battery.critical{
@@ -118,11 +127,6 @@ button:hover {
     padding: 10px;
 }
 
-#battery {
-    color: #8014c2;
-    border-radius: 4px;
-}
-
 @keyframes blink {
     to {
         background-color: #ffffff;
@@ -133,10 +137,6 @@ label:focus {
     background-color: #000000;
 }
 
-#cpu {
-    color: #8014c2;
-}
-
 #memory {
     background-color: #9b59b6;
 }
@@ -145,40 +145,16 @@ label:focus {
     background-color: #964B00;
 }
 
-#backlight {
-    color: #8014c2;
-}
-
-#network {
-    color: #8014c2;
-}
-
-#network.disconnected {
-    color: #8014c2;
-}
-
-#pulseaudio {
-    color: #8014c2;
-}
-
 #pulseaudio.muted {
     color: #2a5c45;
-}
-
-#wireplumber {
-    color: #8014c2;
-}
-
-#wireplumber.muted {
-    color: #8014c2;
 }
 
 #custom-target.adquired {
     color: #e60d0d;
 }
 
-#temperature {
-    color: #8014c2;
+#language {
+  padding-left: 6px;
 }
 
 #temperature.critical {
@@ -218,14 +194,6 @@ label:focus {
 
 #mpd.paused {
     background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
 }
 
 #keyboard-state {
