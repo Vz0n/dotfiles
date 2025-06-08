@@ -6,12 +6,8 @@ alias traceroute="tracepath"
 alias {htop,bashtop}="bpytop"
 alias df="duf"
 alias ps="procs"
-
-# Sometimes I modify my waybar so
-function restart_waybar(){
-  pkill waybar
-  nohup waybar > /dev/null &
-}
+# Lost 4 hours on something just because this program didn't show me an object that was on Active Directory deleted objects CN
+alias ldapsearch="ldapsearch -e 1.2.840.113556.1.4.417"
 
 function hex2dec(){
   printf "Type a hex number: "
@@ -71,9 +67,11 @@ function wallpaper(){
   fi
 }
 
-# For QEMU
-function run_vm(){
-    qemu-system-x86_64 -enable-kvm -vga vmware -cpu host -display gtk,grab-on-hover=on,show-menubar=off -usb -device usb-tablet -device usb-kbd $@
+function clear_pacman_cache(){
+   # Add echos just for verbose stuff.
+   echo 'Cleaning packages cache...'
+   doas rm -rf /var/cache/pacman/pkg/*
+   echo 'Done.'
 }
 
 # Load our API tokens for scripts
