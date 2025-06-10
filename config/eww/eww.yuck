@@ -1,28 +1,23 @@
 (defwidget powermenu_elements []
-  (box :class "box-el" :orientation "horizontal" :halign "center" :spacing 200 
-    (box :orientation "vertical" :valign "start"
-         :class "greeter" :height 280
-      (box :orientation "vertical" :valign "start"
-        (label :text "Hello Vz0n!" :yalign 0.9 :xalign 0.48)
-        (image :path "/home/vzon/.config/images/terminal.png" :width 10 :height 10 :halign "center"))
-      (label :wrap true :width 230 :text "Hope you doing well, if you want to leave just click on one of the options in the right bar" :yalign 1))
-    (box :orientation "vertical" 
-         :class "main"
-      (label :class "text-label" :text "You may want to..." :yalign 0.5)
-      (button :onclick "eww close powermenu" "Close this")
-      (button :onclick "eww close powermenu && hyprctl dispatch exit" "Log out")
-      (button :onclick "eww close powermenu && systemctl reboot" "Restart"))
+  (box :class "box-el" :orientation "horizontal"
+    (box :orientation "vertical" :valign "start" :class "greeter"
+      (label :text "Hello!")
+      (image :path "/home/vzon/.config/images/terminal/vorteil_sticker.png" :width 10 :height 10 :halign "center")
+      (label :class "goodbye-text" :wrap true
+             :text "If you leaving the system, I hope you had fun with it!")
+    )
+    (box :orientation "vertical" :class "main" 
+            (button :onclick "eww close powermenu" "Close this")
+            (button :onclick "eww close powermenu && hyprctl dispatch exit" "Log out")
+    )
   )
-  
 )
 
 (defwindow powermenu
            :monitor 0
-           :geometry (geometry :x "0%"
-                               :y "2px"
-                               :width "30%"
-                               :height "40%"
-                               :anchor "center right")
+           :geometry (geometry :width "40%"
+                               :height "30%"
+                               :anchor "center")
            :stacking "overlay"
            :focusable false
            (powermenu_elements)

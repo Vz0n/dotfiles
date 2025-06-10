@@ -3,39 +3,36 @@
   font-family: 'FiraCode Nerd Font Mono Light';
 }
 
-.bar{
-  border-radius: 5px;
-}
-
 .box-el {
-  border-radius: 6px;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.text-label{
-  border-bottom: 3px solid #055222;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 button{
   transition: background-color 0.2s;
 
   &:hover{
-    background-color: rgba(66, 12, 210, 0.8);
+    background-color: rgb(66, 12, 210);
   }
+
   &:active{
-    background-color: rgba(22, 6, 63, 1);
+    background-color: rgba(22, 6, 63, 0.6);
   }
 }
 
-
-
-.greeter{
-  .text-label{
-    margin: 10px;
+@keyframes color-change {
+  from {
+    color: initial;
   }
-  color: #055222;
+  to {
+    color: #5311d6;
+  }
+}
+
+.greeter {
+    animation: color-change infinite alternate 5s;
 }
 
 .main {
+  border-left: 3px solid #11d5ba;
   background-color: #150524;
 }

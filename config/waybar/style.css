@@ -46,20 +46,16 @@ button {
     color: #8014c2;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
     color: #008000;
+    transition: border-bottom 250ms, box-shadow 250ms, background-color 250ms;
 }
 
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #8014c2;
 }
 
 #workspaces button.active {
@@ -97,6 +93,7 @@ button:hover {
 
 #battery {
   border-radius: 8px;
+  transition: color 300ms;
 }
 
 #battery.warning{
@@ -149,8 +146,22 @@ label:focus {
     color: #2a5c45;
 }
 
+@keyframes adquired_scale {
+  0% {
+    margin-left: initial;
+  }
+  50% {
+    margin-left: 15px;
+  }
+  100% {
+    margin-left: initial;
+  }
+}
+
 #custom-target.adquired {
     color: #e60d0d;
+    animation-name: adquired_scale;
+    animation-duration: 1.5s;
 }
 
 #language {
