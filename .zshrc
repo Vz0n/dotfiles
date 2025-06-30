@@ -17,11 +17,11 @@ function hex2dec(){
 }
 
 function settarget(){
-    echo "$@" > /home/vzon/.config/waybar/scripts/target
+    echo "$@" > ~/.config/waybar/scripts/target
 }
 
 function cleartarget(){
-    echo '' > /home/vzon/.config/waybar/scripts/target
+    echo '' > ~/.config/waybar/scripts/target
 }
 
 function prepare(){
@@ -77,5 +77,5 @@ function clear_pacman_cache(){
 # Load our API tokens for scripts
 source ~/.api_tokens
 
-export PATH=$PATH:/home/vzon/.local/bin
+export PATH=$PATH:~/.local/bin
 fastfetch
