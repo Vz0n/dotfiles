@@ -156,9 +156,9 @@
         "max-length": 40,
         "interval": 3,
         "tooltip": true,
-        "on-click": "/home/vzon/.config/waybar/scripts/copy.sh",
-        "on-click-right": "/home/vzon/.config/waybar/scripts/copy.sh",
-        "exec": "/home/vzon/.config/waybar/scripts/target_status.sh"
+        "on-click": "~/.config/waybar/scripts/copy.sh",
+        "on-click-right": "~/.config/waybar/scripts/copy.sh",
+        "exec": "~/.config/waybar/scripts/target_status.sh"
     }
 }
 

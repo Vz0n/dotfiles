@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-target=$(cat /home/vzon/.config/waybar/scripts/target)
+target=$(cat ~/.config/waybar/scripts/target)
 
 if [ $target ]; then
 	echo "$target\nA target is here!\nadquired"
