@@ -1,6 +1,6 @@
 #!/bin/bash
-# This is just a silly script to automate my stuff, so i don't need to type too much in the 
-# console to prepare my Hyprland on a vanilla Arch with just a console and an user. 
+# This is just a silly script to automate my stuff, so i don't need to type too much in the
+# console to prepare my Hyprland on a vanilla Arch with just a console and a user.
 
 # Path of the program to escalate privileges when using pacman, change if it differs from yours.
 SU_COMMAND="/usr/bin/sudo"
@@ -10,9 +10,9 @@ function terminate(){
    return 1
 }
 
-function install(){
-  # Naive way to check if it's root tho
-  if [[ $HOME == "/root" ]]; then
+function install() {
+
+  if [[ "$(id -u)" = "0" ]]; then
     echo "Run this script as a normal user."
     return 1
   fi
@@ -63,5 +63,3 @@ install
 
 # Reset signal handler to it's normal value
 trap SIGINT
-
-
