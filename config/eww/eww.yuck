@@ -2,7 +2,7 @@
   (box :class "box-el" :orientation "horizontal"
     (box :orientation "vertical" :valign "start" :class "greeter"
       (label :text "Hello!")
-      (image :path "/home/vzon/.config/images/terminal/vorteil_sticker.png" :width 10 :height 10 :halign "center")
+      (image :path "/home/vzon/.config/images/emotes/vorteil_sticker.png" :width 10 :height 10 :halign "center")
       (label :class "goodbye-text" :wrap true
              :text "If you leaving the system, I hope you had fun with it!")
     )
