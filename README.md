@@ -27,7 +27,7 @@ Clone this repo and run the script `strap.sh`. It will install all the stuff nee
 
 ### My themes and terminal
 
-I use powerlevel10k as default terminal theme, Sweet Dark + Bonny Dark Icons for GTK and the Material Dark Cursor, just in case that you want to know (surely you actually don't want but uwu)
+I use powerlevel10k as default terminal theme, Sweet Dark + Bonny Dark Icons for GTK and a cute Anya cursor, just in case that you want to know (surely you actually don't want but uwu)
 
 ### Extra
 
