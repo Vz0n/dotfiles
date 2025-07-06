@@ -1,6 +1,6 @@
 #!/bin/bash
 # This is just a silly script to automate my stuff, so i don't need to type too much in the
-# console to prepare my Hyprland on a vanilla Arch with just a console and a user.
+# console to prepare my Hyprland on a vanilla Arch with just a console, a user and a greeter.
 
 # Path of the program to escalate privileges when using pacman, change if it differs from yours.
 SU_COMMAND="/usr/bin/sudo"
