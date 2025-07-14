@@ -7,5 +7,5 @@ swww query
 if [[ $? -eq 0 ]]; then
   swww kill
 fi
-swww init --format xrgb
+swww-daemon &
 dunst &
