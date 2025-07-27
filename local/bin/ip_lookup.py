@@ -26,25 +26,12 @@ if ip != "":
         time.sleep(5)
         exit()
 
-    response = request.json()
-    country = response["country"]
-    city = response["city"]
-    region = response["region"]
-    if response.get("hostname") == None:
-        hostname = "No hostname"
-    else:
-        hostname = response["hostname"]
-    loc = response["loc"]
-    org = response["org"]
-    timezone = response["timezone"]
-    print(Fore.CYAN + "[*] IP: " + ip)
-    print(Fore.CYAN + "[*] Hostname: " + hostname)
-    print(Fore.CYAN + "[*] Country: " + country)
-    print(Fore.CYAN + "[*] City: " + city)
-    print(Fore.CYAN + "[*] Region: " + region)
-    print(Fore.CYAN + "[*] Location (Lat, Long): " + loc)
-    print(Fore.CYAN + "[*] Organization: " + org)
-    print(Fore.CYAN + "[*] Timezone: " + timezone)
+    for pair in zip(response.keys(), response.values()):
+        k = pair[0].capitalize()
+        v = pair[1]
+
+        print(f"{Fore.CYAN}[*] {k}: {v}")
+
     print(Fore.GREEN + "Successfully fetched information.")
     deinit() 
 
