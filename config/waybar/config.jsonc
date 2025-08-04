@@ -6,10 +6,15 @@
     "spacing": 3, // Gaps between modules (4px)
     "margin-top": 2,
     // Choose the order of the modules
-    "modules-left": ["clock", "custom/target"],
+    "modules-left": ["clock", "image", "custom/target"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["pulseaudio", "network", "battery", "tray", "hyprland/language"],
     //Modules configuration
+    "image":{
+         "exec": "~/.config/waybar/scripts/target_icon.sh",
+         "size": 16,
+         "interval": 3
+    },
     "hyprland/language": {
          "format-es": "󰌌 es",
          "format-en": "󰌌 en"
@@ -152,7 +157,7 @@
         "on-click": "pavucontrol"
     },
     "custom/target": {
-        "format": "󰍹  {}",
+        "format": "{}",
         "max-length": 40,
         "interval": 3,
         "tooltip": true,
