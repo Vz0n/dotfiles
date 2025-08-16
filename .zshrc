@@ -32,15 +32,19 @@ function prepare(){
   mkdir -p $1/{assets,network}
   touch $1/notes.txt
 }
+
 function cat(){
   bat --style=plain --paging=never $@
 }
+
 function ssh(){
   kitty +kitten ssh $@
 }
+
 function image(){
   kitty +kitten icat $@
 }
+
 function ip2dec () {
     if [ -z $@ ]; then
       echo "Usage: ip2dec [ip.address.ipv4]"
@@ -50,6 +54,7 @@ function ip2dec () {
     IFS=. read -r a b c d <<< "$ip"
     printf '%d\n' "$((a * 256 ** 3 + b * 256 ** 2 + c * 256 + d))"
 }
+
 function clipboard(){
   if [ -z $1 ]; then
     echo "Please provide an input file"

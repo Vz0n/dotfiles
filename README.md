@@ -23,7 +23,7 @@ It's based on some rices that i saw among the Linux ricing community, but the in
 
 Clone this repo and run the script `strap.sh`. It will install all the stuff needed for the environment to work and setup config files.
 
-**Note:** There are still some things in config files that have my home directory hardcoded, I need to change it so, take note if you're installing this.
+**Note:** There are some things in config files that have my home directory hardcoded so, take note if you're installing this.
 
 ### My themes and terminal
 
@@ -34,5 +34,7 @@ I use powerlevel10k as default terminal theme, Sweet Dark + Bonny Dark Icons for
 As you might have seen, this has some scripts and a waybar widget for hacking/research purposes, the scripts works using the SecurityTrails API so you will need to put an API key in the `~/.api_tokens` file. 
 
 For the waybar widget just read the code and `.zshrc`.
+
+Also, the stupidly minimal eww powermenu does nothing. You need to edit its button actions.
 
 *Suggestion: read documentations of the software used here before starting to edit stuff*

@@ -5,9 +5,9 @@
 # Path of the program to escalate privileges when using pacman, change if it differs from yours.
 SU_COMMAND="/usr/bin/sudo"
 
-function terminate(){
-   echo "Exiting..."
-   return 1
+function terminate() {
+  echo "Exiting..."
+  return 1
 }
 
 function install() {
@@ -25,7 +25,7 @@ function install() {
   # Install main packages
   $SU_COMMAND pacman -S --needed --noconfirm base-devel which kitty fastfetch fuzzel gvfs swww hyprland waybar hyprlock hypridle grim zsh pavucontrol obsidian ttf-firacode-nerd gammastep brightnessctl dunst bat lsd git xdg-desktop-portal-hyprland xdg-desktop-portal nwg-look bpytop duf obsidian
 
-  helper=$(which yay || which paru) 
+  helper=$(which yay || which paru)
 
   if [ -z $helper ]; then
     echo "There's no AUR helper! Installing yay (will be deleted after setup)..."
@@ -55,7 +55,7 @@ function install() {
 
   echo "Installation of the dotfiles completed!"
   echo "To see the Hyprland, just go to your Desktop Manager login screen and"
-  echo "select 'Hyprland' as session." 
+  echo "select 'Hyprland' as session."
 }
 
 trap terminate SIGINT
