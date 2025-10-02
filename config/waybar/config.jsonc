@@ -24,14 +24,14 @@
          "all-outputs": true,
          "format": "{icon}",
          "format-icons": {
-             "urgent": "",
-             "focused": "",
-             "1": "",
-             "2": "",
-             "3": "",
-             "4": "",
-             "5": "",
-             "6": "",
+             "urgent": "",
+             "focused": "󰋱",
+             "1": "󰆍",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "󰶞",
+             "6": "󰿈",
          }
     },
     "keyboard-state": {
@@ -118,18 +118,18 @@
             "warning": 20,
             "critical": 10
         },
-        "format": "{icon} ",
+        "format": "{icon}",
         "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         //"format-good": "",
         "format-full": "",
-        "format-icons": ["", "", "", ""],
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂂"],
         "tooltip-format": "{capacity}%\n{timeTo}"
     },
     "network": { 
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{ipaddr}/{cidr} ",
+        "format-wifi": "{ipaddr}/{cidr} 󰤨",
         "format-ethernet": "{ipaddr}/{cidr} 󰆧",
         "tooltip-format": "{ifname} via {gwaddr}",
         "tooltip-format-wifi": "Connected to {essid}. ({signaldBm} dBm)",

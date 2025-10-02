@@ -145,7 +145,7 @@ label:focus {
     color: #2a5c45;
 }
 
-@keyframes adquired_scale {
+@keyframes adquired_translate {
   0% {
     margin-left: initial;
   }
@@ -159,7 +159,7 @@ label:focus {
 
 #custom-target.adquired {
     color: #e60d0d;
-    animation-name: adquired_scale;
+    animation-name: adquired_translate;
     animation-duration: 1.5s;
 }
 
