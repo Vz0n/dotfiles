@@ -23,7 +23,7 @@ function install() {
   fi
 
   # Install main packages
-  $SU_COMMAND pacman -S --needed --noconfirm base-devel which kitty fastfetch fuzzel gvfs swww hyprland waybar hyprlock hypridle grim zsh pavucontrol obsidian ttf-firacode-nerd gammastep brightnessctl dunst bat lsd git xdg-desktop-portal-hyprland xdg-desktop-portal nwg-look bpytop duf obsidian
+  $SU_COMMAND pacman -S --needed --noconfirm base-devel which kitty fastfetch fuzzel gvfs swww hyprland waybar hyprlock hypridle grim zsh pavucontrol obsidian ttf-firacode-nerd hyprsunset brightnessctl mako bat lsd git xdg-desktop-portal-hyprland xdg-desktop-portal nwg-look bpytop duf obsidian
 
   helper=$(which yay || which paru)
 
