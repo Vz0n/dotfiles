@@ -1,11 +1,10 @@
 #!/bin/bash
 
 eww daemon >&/dev/null
-gammastep -O 4500 &
+hyprsunset -t 4500 &
 hyprctl setcursor anya_cursor 24
 swww query
-if [[ $? -eq 0 ]]; then
-  swww kill
+if [[ ! $? -eq 0 ]]; then
+  swww-daemon &
 fi
-swww-daemon &
-dunst &
+mako &
