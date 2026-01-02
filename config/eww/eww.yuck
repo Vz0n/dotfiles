@@ -9,7 +9,6 @@
     (box :orientation "vertical" :class "main" 
             (button :onclick "eww close powermenu" "Close this")
             (button :onclick "eww close powermenu" "Log out")
-            (button :onclick "eww close powermenu" "Restart")
             (button :onclick "eww close powermenu" "Suspend")
     )
   )
