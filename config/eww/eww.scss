@@ -1,38 +1,142 @@
+// AI slop edition · design tokens
+$accent:     #8b5cf6; // violet
+$accent-2:   #d946ef; // fuchsia
+$bg:         #0a0714;
+$fg:         #ece9f5;
+$muted:      rgba(236, 233, 245, 0.55);
+$faint:      rgba(236, 233, 245, 0.35);
+$border:     rgba(255, 255, 255, 0.08);
+$glass:      rgba(255, 255, 255, 0.05);
+$r-card:     24px;
+$r-tile:     18px;
+$r-full:     999px;
+$glow:       0 0 24px rgba(139, 92, 246, 0.35);
+$springy:    cubic-bezier(0.34, 1.56, 0.64, 1);
+
 * {
   all: unset;
-  font-family: 'FiraCode Nerd Font Mono Light';
+  font-family: 'FiraCode Nerd Font Mono';
 }
 
-.box-el {
-  background-color: rgba(0, 0, 0, 0.9);
+.wrap {
+  padding: 12px;
 }
 
-button{
-  transition: background-color 0.2s;
-
-  &:hover{
-    background-color: rgb(66, 12, 210);
-  }
-
-  &:active{
-    background-color: rgba(22, 6, 63, 0.6);
-  }
+.card {
+  color: $fg;
+  padding: 20px;
+  border-radius: $r-card;
+  border: 1px solid $border;
+  background:
+    radial-gradient(ellipse 120% 90% at 50% -20%, rgba(139, 92, 246, 0.28), rgba(139, 92, 246, 0) 60%),
+    linear-gradient(170deg, #17102b, #0d0819 55%, #120a22);
+  box-shadow: $glow, 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
-@keyframes color-change {
-  from {
-    color: initial;
-  }
-  to {
-    color: #5311d6;
-  }
+.header {
+  margin-bottom: 6px;
+}
+
+.ring {
+  padding: 2px;
+  border-radius: $r-full;
+  background: linear-gradient(135deg, $accent, $accent-2);
+  box-shadow: $glow;
+}
+
+.ring-inner {
+  padding: 7px;
+  border-radius: $r-full;
+  background: rgba(10, 7, 20, 0.92);
 }
 
 .greeter {
-    animation: color-change infinite alternate 5s;
+  padding-left: 2px;
 }
 
-.main {
-  border-left: 3px solid #11d5ba;
-  background-color: #150524;
+.hi {
+  font-size: 20px;
+  font-weight: bold;
+  color: $fg;
+  animation: pulse 3s ease-in-out infinite alternate;
+}
+
+.bye {
+  margin-top: 4px;
+  font-size: 10px;
+  color: $muted;
+}
+
+.clockblock {
+  padding-left: 10px;
+  border-left: 1px solid $border;
+}
+
+.clock {
+  font-size: 22px;
+  font-weight: bold;
+  color: #c4b5fd;
+  text-shadow: 0 0 14px rgba(139, 92, 246, 0.7);
+}
+
+.date {
+  margin-top: 2px;
+  font-size: 10px;
+  color: $muted;
+}
+
+.tile {
+  padding: 12px 6px;
+  border-radius: $r-tile;
+  border: 1px solid $border;
+  background-color: $glass;
+  transition: all 0.15s ease;
+}
+
+.tile:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: linear-gradient(135deg, $accent, $accent-2);
+  box-shadow: $glow;
+}
+
+.tile:active {
+  border-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(139, 92, 246, 0.35);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+.tile-icon {
+  font-size: 20px;
+  color: $fg;
+  transition: color 0.15s ease;
+}
+
+.tile:hover .tile-icon {
+  color: #ffffff;
+}
+
+.tile-label {
+  margin-top: 6px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: $muted;
+  transition: color 0.15s ease;
+}
+
+.tile:hover .tile-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer {
+  font-size: 9px;
+  color: $faint;
+}
+
+@keyframes pulse {
+  from {
+    text-shadow: 0 0 6px rgba(139, 92, 246, 0.4);
+  }
+  to {
+    text-shadow: 0 0 16px rgba(217, 70, 239, 0.9);
+  }
 }

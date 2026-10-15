@@ -1,27 +1,47 @@
+(defpoll time :interval "1s" "date +%H:%M")
+(defpoll datestr :interval "10s" "date +'%A, %d %b'")
+
+(defwidget tile [icon label cmd]
+  (button :class "tile" :hexpand true :onclick cmd
+    (box :orientation "vertical" :valign "center"
+      (label :class "tile-icon" :text icon)
+      (label :class "tile-label" :text label))))
+
+(defwidget header []
+  (box :class "header" :orientation "horizontal" :spacing 12
+    (box :class "ring" :valign "center"
+      (box :class "ring-inner"
+        (image :path "/home/vzon/.config/images/emotes/vorteil_sticker.png"
+               :image-width 44 :image-height 44)))
+    (box :class "greeter" :orientation "vertical" :valign "center" :hexpand true
+      (label :class "hi" :text "Hello!")
+      (label :class "bye" :wrap true :xalign 0
+             :text "If you leaving the system, I hope you had fun with it!"))
+    (box :class "clockblock" :orientation "vertical" :valign "center" :halign "end"
+      (label :class "clock" :text time)
+      (label :class "date" :text datestr))))
+
 (defwidget powermenu_elements []
-  (box :class "box-el" :orientation "horizontal"
-    (box :orientation "vertical" :valign "start" :class "greeter"
-      (label :text "Hello!")
-      (image :path "/home/vzon/.config/images/emotes/vorteil_sticker.png" :width 10 :height 10 :halign "center")
-      (label :class "goodbye-text" :wrap true
-             :text "If you leaving the system, I hope you had fun with it!")
-    )
-    (box :orientation "vertical" :class "main" 
-            (button :onclick "eww close powermenu" "Close this")
-            (button :onclick "eww close powermenu" "Log out")
-            (button :onclick "eww close powermenu" "Suspend")
-    )
-  )
-)
+  (box :class "wrap"
+    (box :class "card" :orientation "vertical" :spacing 14
+      (header)
+      (box :class "grid" :orientation "vertical" :spacing 10
+        (box :class "tile-row" :orientation "horizontal" :spacing 10
+          (tile :icon "" :label "Lock"     :cmd "eww close powermenu && hyprlock")
+          (tile :icon "" :label "Suspend"  :cmd "eww close powermenu && systemctl suspend")
+          (tile :icon "" :label "Log out"  :cmd "eww close powermenu && hyprshutdown -t 'Sending this shit to backrooms'"))
+        (box :class "tile-row" :orientation "horizontal" :spacing 10
+          (tile :icon "" :label "Reboot"   :cmd "eww close powermenu && systemctl reboot")
+          (tile :icon "" :label "Poweroff" :cmd "eww close powermenu && systemctl poweroff")
+          (tile :icon "" :label "Close"    :cmd "eww close powermenu")))
+      (label :class "footer" :halign "center" :text "// eww · AI slop edition"))))
 
 (defwindow powermenu
            :monitor 0
-           :geometry (geometry :width "40%"
-                               :height "30%"
+           :geometry (geometry :width 480
+                               :height 340
                                :anchor "center")
            :stacking "overlay"
            :focusable false
            (powermenu_elements)
 )
-
-
